@@ -1,0 +1,8 @@
+.box {
+    height: 100vh;
+    font-weight: 500;
+    display: flex;
+    flex: 1;
+    justify-content: start;
+    align-items: center;
+}
