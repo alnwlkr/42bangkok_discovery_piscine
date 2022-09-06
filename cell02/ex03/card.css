@@ -32,9 +32,7 @@ a {
 button:hover, a:hover {
     opacity: 0.7;
 }
-.icon {
-    margin: 24px 0px;
-}
+
 img {
     width: 300px;
     height: 300px;
