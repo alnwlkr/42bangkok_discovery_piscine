@@ -8,15 +8,8 @@
     <title>background.html</title>
     <script>
         function randBgColor() {
-            document.body.style.backgroundColor = getRandomColor();
-        }
-        function getRandomColor() {
-            var letters = "0123456789ABCDEF".split('');
-            var color = "#";
-            for (var i = 0; i < 6; i++ ) {
-                color += letters[Math.floor(Math.random() * 16)];
-            }
-            return color;
+            document.body.style.backgroundColor = "rgb(" + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + "," + Math.floor(Math.random() * 255) + ")";
+            //min-max of rgb is (0, 0, 0) - (255, 255, 255) , Math.random is random float number from 0 to 1
         }
     </script>
 </head>
