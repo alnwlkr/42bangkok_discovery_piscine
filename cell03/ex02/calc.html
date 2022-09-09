@@ -54,10 +54,11 @@
 				text = `${n1} ${sign} ${n2} = ${result}`
 			}
 			//if result = NaN It will change text to error
-			if (isNaN(result))
+			if (isNaN(result) && text == undefined)
 			{
 				text = 'Error :('
 			}
+
 			console.log(text);
 			alert(text);
 		}
