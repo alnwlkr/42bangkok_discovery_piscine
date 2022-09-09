@@ -6,6 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>calc.html</title>
 	<script>
+		//Please use me every 30 seconds
 		setInterval(function() {alert('Please, use me...')}, 30000);
 		function calc() {
 			//let var can use only in that function
@@ -54,11 +55,10 @@
 				text = `${n1} ${sign} ${n2} = ${result}`
 			}
 			//if result = NaN It will change text to error
-			if (isNaN(result) && text == undefined)
+			if (isNaN(result) && text != 'It’s over 9000!')
 			{
 				text = 'Error :('
 			}
-
 			console.log(text);
 			alert(text);
 		}
