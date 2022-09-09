@@ -6,7 +6,7 @@
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<title>calc.html</title>
 	<script>
-		//setInterval(function() {alert('Please, use me...')}, 30000);
+		setInterval(function() {alert('Please, use me...')}, 30000);
 		function calc() {
 			//let var can use only in that function
 			let result;
@@ -15,23 +15,48 @@
 			// '+' sign at the front of document is type cast
 			const n1 = +document.getElementById('num1').value;
 			const n2 = +document.getElementById('num2').value;
-			const signvalue = document.getElementById('sign');
-			const sign = signvalue.options[signvalue]
-			console.log(sign)
+			//Getting sign from selectedIndex command but we need to point
+			//Which Id we want first
+			const signVal = document.getElementById('sign');
+			const sign = signVal.options[signVal.selectedIndex].value;
 			if (n1 < 0 || n2 < 0) {
 				text = 'Error :('
-			} else if (sign == '+') {
+			} else if (sign === '+') {
 				result = n1 + n2
-			} else if (sign == '-') {
+			} else if (sign === '-') {
 				result = n1 - n2
-			} else if (sign == '*') {
+			} else if (sign === '*') {
 				result = n1 * n2
-			} else if (sign == '%' && n2 === 0) {
+			} else if (sign === '/' && n2 === 0) {
 				text = 'It’s over 9000!'
+			} else if (sign === '%' && n2 === 0) {
+				text = 'It’s over 9000!'
+			} else if (sign === '/') {
+				result = n1 / n2
+			} else if (sign === '%') {
+				result = n1 % n2
+			} else {
+				text = 'Error :('
 			}
-			text = result
-			if (result === undefined){
+			/*
+			console.log('n1 = ' + n1)
+			console.log('type of n1 = ' + typeof n2)
+			console.log('n2 = ' + n2)
+			console.log('type of n2 = ' + typeof n2)
+			console.log('text = ' + text)
+			console.log('type of text = ' + typeof text)
+			console.log('result = ' + result)
+			console.log('type of result = ' + typeof result)
+			*/
+			//If text is empty Its mean Program got result
+			if (text === undefined)
+			{
 				text = `${n1} ${sign} ${n2} = ${result}`
+			}
+			//if result = NaN It will change text to error
+			if (isNaN(result))
+			{
+				text = 'Error :('
 			}
 			console.log(text);
 			alert(text);
@@ -41,11 +66,11 @@
 <body>
 	<input name="num1" id="num1">
 	<select name="sign" id="sign">
-		<option value="+">+</option>
-		<option value="+">-</option>
-		<option value="+">*</option>
-		<option value="+">/</option>
-		<option value="+">%</option>
+		<option value='+'>+</option>
+		<option value='-'>-</option>
+		<option value='*'>*</option>
+		<option value='/'>/</option>
+		<option value='%'>%</option>
 	</select>
 	<input name="num2" id="num2">
 	<button onclick="calc()">Try me!</button>

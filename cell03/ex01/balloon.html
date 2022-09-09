@@ -16,18 +16,63 @@
             width: 200px;
             height: 200px;
             border-radius: 50%;
-            margin: 0px auto 0px auto;
+            margin: auto;
+            //top 0px , right auto
+        }
         }
     </style>
     <script>
-        function click() {
+        function olScript() {
+            document.getElementById("balloon").style.backgroundColor = "red";
+        }
+        function onclick_event() {
             let balloon = document.getElementById("balloon");
-            color_back();
-            balloon.style.width = Math.max(200,)
+            color_next()
+            if (balloon.style.width <= "420") {
+            balloon.style.width = (balloon.offsetWidth + 10) + "px";
+            balloon.style.height = (balloon.offsetHeight + 10) + "px";
+            } else {
+                    balloon.style.width = "200px";
+                    balloon.style.height = "200px";
+                }
+        }
+        
+        function onmouseleave_event() {
+            let balloon = document.getElementById("balloon");
+            color_back()
+            if (balloon.style.width > "200") {
+                balloon.style.width = (balloon.offsetWidth - 5) + "px";
+                balloon.style.height = (balloon.offsetHeight - 5) + "px";
+            }
+        }
+        
+        function color_next(){
+            if (document.getElementById("balloon").style.backgroundColor == "red") {
+                document.getElementById("balloon").style.backgroundColor = "green";
+            }
+            else if (document.getElementById("balloon").style.backgroundColor == "green") {
+                document.getElementById("balloon").style.backgroundColor = "blue";
+            } 
+            else {
+                document.getElementById("balloon").style.backgroundColor = "red";
+            }
+        }
+
+        function color_back() {
+            //red green blue red 
+            if (document.getElementById("balloon").style.backgroundColor == "red") {
+                document.getElementById("balloon").style.backgroundColor = "blue";
+            }
+            else if (document.getElementById("balloon").style.backgroundColor == "blue") {
+                document.getElementById("balloon").style.backgroundColor = "green";
+            }
+            else if (document.getElementById("balloon").style.backgroundColor == "green"){
+                document.getElementById("balloon").style.backgroundColor = "red";
+            }
         }
     </script>
 </head>
-<body>
-    <div class="balloon" onclick="click()" onmouseleave="leave()"></div>
+<body onload="olScript()">
+    <div class="balloon" id="balloon" onclick="onclick_event()" onmouseleave="onmouseleave_event()"></div>
 </body>
 </html>
