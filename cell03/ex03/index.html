@@ -4,9 +4,44 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>index.html</title>
+    <script src="todocell33.js"></script>
+    <style>
+        .container {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+        }
+        .list {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .list h2 {
+            margin-bottom: 10px;
+        }
+        .list .list-items {
+            margin-left: 20px;
+        }
+        .list .list-item {
+            margin-top: 4px;
+            margin-bottom: 4px;
+        }
+        .list .list-item:hover {
+            cursor: pointer;
+        }
+        .list button {
+            width: 100%;
+        }
+    </style>
 </head>
 <body>
-    
+    <div class="container">
+        <ul class="list">
+            <h2>To do list</h2>
+            <button onclick="newItem(event)">New</button>
+            <div class="list-items" id="ft_list"></div>
+        </ul>
+    </div>
 </body>
 </html>
