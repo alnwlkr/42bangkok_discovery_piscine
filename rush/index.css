@@ -1,0 +1,44 @@
+html { 
+    background: url("https://www.42bangkok.com/wp-content/uploads/2020/02/42feature.jpg") no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
+    background-color: rgba(255, 255, 255, 0.7);
+    background-blend-mode: lighten;
+}
+body {
+    height: 100vh;
+    font-family: "Poppins";
+    font-size: 22px;
+    overflow: hidden;
+}
+.container {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.container-a{
+    font-size: 24px;
+}
+.divbtn {
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+}
+.btn {
+    background: rgba(255, 255, 255, 0.0);
+    border-color: rgba(160, 160, 160, 0);
+    padding: 14px 28px;
+    font-family: "Poppins";
+    font-size: 16px;
+    cursor: pointer;
+    display: inline-block;
+    text-decoration: none;
+    color: rgba(0, 0, 0, 1);
+}
+.btn:hover {
+    background: rgba(255, 255, 255, 0.5);
+}
